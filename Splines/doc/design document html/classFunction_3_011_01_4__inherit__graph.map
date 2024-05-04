@@ -1,0 +1,8 @@
+<map id="Function&lt; 1 &gt;" name="Function&lt; 1 &gt;">
+<area shape="rect" id="node1" title="specialization for one dimension function, definition is as same as high dimension" alt="" coords="414,5,617,156"/>
+<area shape="rect" id="node2" href="$classBSpline_3_01Order_00_011_00_01t_01_4.html" title="specialization for one dimension B&#45;form splines" alt="" coords="5,204,276,692"/>
+<area shape="rect" id="node4" href="$classBSpline_3_01Order_00_011_00_01t_01_4_1_1BBasis.html" title="the Basis function of B&#45;form splines" alt="" coords="301,343,503,553"/>
+<area shape="rect" id="node5" href="$classpolynomial.html" title="polynomial inherited from Function&lt;1&gt;" alt="" coords="527,307,730,589"/>
+<area shape="rect" id="node6" href="$classppSpline_3_01Order_00_011_01_4.html" title="specialization for one dimension piecewise polynomial splines" alt="" coords="754,248,965,648"/>
+<area shape="rect" id="node3" href="$classCardinalBSpline.html" title="one dimension cardinal B&#45;form splines" alt="" coords="45,740,236,935"/>
+</map>

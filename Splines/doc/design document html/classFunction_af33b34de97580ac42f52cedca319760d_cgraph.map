@@ -1,0 +1,4 @@
+<map id="Function::operator()" name="Function::operator()">
+<area shape="rect" id="node1" title="override the operator () to use this class in a expression just like function in the math" alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node2" href="$classFunction.html#aca66f94a057f43c9b56b07ffe17ffef1" title="pure virtual function to return the value of function at x" alt="" coords="204,5,309,32"/>
+</map>

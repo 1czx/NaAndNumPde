@@ -1,0 +1,6 @@
+make run 即可编译运行测试程序 测试结果存储在result目录下 并且各测试的耗时和迭代次数以及直接法LU分解的耗时输出到命令行，预设精度的测试结果也直接输出到命令行
+多重网格的实现在./src/include/MultigridPossionSolver.h中
+为方便移植Project的代码，在./src/include/Matrix.h简易的MatrixXd和VectorXd，程序中的MatrixXd和VectorXd均不是Eigen库中的，LU分解求解调用lapack库实现在MatrixXd的成员函数solve()中
+main1D.cpp/main2D.cpp分别为一维和二维的测试程序,accuracy.cpp为预设精度的测试程序
+运行结束后在src目录下运行plot.py即可绘制所得结果的图像
+报告中从第6页到第26页都是数值结果的展示，运行时间与预设精度测试在26页

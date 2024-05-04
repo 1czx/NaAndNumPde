@@ -1,0 +1,11 @@
+<map id="Function::val" name="Function::val">
+<area shape="rect" id="node1" title="pure virtual function to return the value of function at x" alt="" coords="435,140,540,167"/>
+<area shape="rect" id="node2" href="$classFunction.html#a65e7e73d25e593e976661e85661eb7d7" title="impletement a numerical derivative for any funcition, user can choose override to make it more precis..." alt="" coords="229,56,356,83"/>
+<area shape="rect" id="node5" href="$classFunction_3_011_01_4.html#ae591beaec1315a9eb8da17a62423f660" title="impletement a numerical derivative for any funcition, user can choose override to make it more precis..." alt="" coords="211,115,375,141"/>
+<area shape="rect" id="node8" href="$classFunction.html#af33b34de97580ac42f52cedca319760d" title="override the operator () to use this class in a expression just like function in the math" alt="" coords="217,165,368,192"/>
+<area shape="rect" id="node9" href="$classFunction_3_011_01_4.html#a1a4353e4f01f87f640bc16abe7b8b87b" title="override the operator () to use this class in a expression just like function in the math" alt="" coords="199,216,387,243"/>
+<area shape="rect" id="node3" href="$classBSpline.html#a02f4d9cd71eb5ebf69775fe308fc1e6c" title="fitting a curve by function" alt="" coords="13,5,143,32"/>
+<area shape="rect" id="node4" href="$classppSpline.html#a2caabd76d26b514462dc6c1e8c12e1ed" title="fitting a curve by function" alt="" coords="9,56,147,83"/>
+<area shape="rect" id="node6" href="$classBSpline_3_01Order_00_011_00_01t_01_4.html#aeaf4f69bc60a74aac0b402a253cba5f6" title="compute the coefficient of basis and compute the express of spline to interpolate a function" alt="" coords="7,107,149,149"/>
+<area shape="rect" id="node7" href="$classppSpline_3_01Order_00_011_01_4.html#a542e9af13730f13040188ff6c4508b60" title="compute polynomial on each interpolation subinterval to interpolate a function" alt="" coords="5,173,151,214"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Function&lt; 1 &gt;::diffVal" name="Function&lt; 1 &gt;::diffVal">
+<area shape="rect" id="node1" title="impletement a numerical derivative for any funcition, user can choose override to make it more precis..." alt="" coords="199,46,363,73"/>
+<area shape="rect" id="node2" href="$classBSpline_3_01Order_00_011_00_01t_01_4.html#aeaf4f69bc60a74aac0b402a253cba5f6" title="compute the coefficient of basis and compute the express of spline to interpolate a function" alt="" coords="7,5,149,47"/>
+<area shape="rect" id="node3" href="$classppSpline_3_01Order_00_011_01_4.html#a542e9af13730f13040188ff6c4508b60" title="compute polynomial on each interpolation subinterval to interpolate a function" alt="" coords="5,71,151,112"/>
+</map>

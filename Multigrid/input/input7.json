@@ -1,0 +1,31 @@
+{
+    "BoundaryCondition": [
+        "Neumann",
+        "Dirichlet",
+        "Dirichlet",
+        "Neumann"
+    ],
+    "@BoundaryCondition": [
+        "bottom(2D)/left(1D)",
+        "right(2D)/right(1D)",
+        "top",
+        "left"
+    ],
+
+    "opfile":"Fwt_Q_VC",
+    "@opfile":"Fwt:FullWeight, Inj:Injection; L:linear, Q:quadratic; FMG:full multigrid, VC:V-cycle",
+
+    "restriction":"FullWeight",
+
+    "prolongation":"quadratic",
+
+    "cycles":"VC",
+
+    "maxIter":100,
+
+    "RA":1e-8,
+    "@RA":"relative accuracy",
+
+    "initialGuess":"ZERO",
+    "@initialGuess":"ZERO: zero-vector initial gauss; otherwise, give a file where the gauss stored"
+}

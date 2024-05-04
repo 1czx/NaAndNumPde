@@ -1,0 +1,5 @@
+<map id="BSpline::fitCurve" name="BSpline::fitCurve">
+<area shape="rect" id="node1" title="fitting a curve by function" alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$classFunction.html#a65e7e73d25e593e976661e85661eb7d7" title="impletement a numerical derivative for any funcition, user can choose override to make it more precis..." alt="" coords="184,5,311,32"/>
+<area shape="rect" id="node3" href="$classFunction.html#aca66f94a057f43c9b56b07ffe17ffef1" title="pure virtual function to return the value of function at x" alt="" coords="359,5,464,32"/>
+</map>

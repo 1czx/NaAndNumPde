@@ -1,0 +1,27 @@
+{
+    "BoundaryCondition": [
+        "Dirichlet",
+        "Nuemann",
+        "Dirichlet",
+        "Nuemann"
+    ],
+    "@BoundaryCondition": [
+        "bottom",
+        "right",
+        "top",
+        "left",
+        "circle"
+    ],
+
+    "DomainType": 0,
+    "@DomainType": "0: (0,1)^2; 1: (0,1)^2\\D",
+    
+    "opfile":"RD0101",
+    "@opfile":"RD: regular domain; IRD: irrgular domain; 0: Dirichlet; 1: Nuemann",
+
+    "centerX": "",
+
+    "centerY": "",
+
+    "radius": ""
+}

@@ -1,0 +1,61 @@
+{
+    "outputDir": "../result/",
+    "@outputDir": "结果输出目录",
+
+    "intervalNumberForPlot": 1000,
+    "@intervalNumberForPlot": "绘图时的采样点个数",
+    
+    "ProblemA": {
+        "isTest": true,
+        "left": -1,
+        "right": 1,
+        "knotsNumber": [
+            6,
+            11,
+            21,
+            41,
+            81
+        ]
+    },
+    "@ProblemA": {
+        "isTest": "是否测试assignmentsA",
+        "left": "拟合区间左端点",
+        "right": "拟合区间右端点",
+        "knotsNumber": "测试中的节点个数"
+    },
+
+    "ProblemBCD": {
+        "isTest": true,
+        "left": -5,
+        "right": 5,
+        "testSites": [
+            -3.5,
+            -3,
+            -0.5,
+            0,
+            0.5,
+            3.5
+        ]
+    },
+    "@ProblemBCD": {
+        "isTest": "是否测试assignmentsBCD",
+        "left": "拟合区间左端点",
+        "right": "拟合区间右端点",
+        "testSites": "拟合误差的取值点"
+    },
+
+    "ProblemE": {
+        "isTest": true,
+        "alpha": 4,
+        "intervalNumbers": [
+            10,
+            40,
+            160
+        ]
+    },
+    "@ProblemE": {
+        "isTest": "是否测试assignmentsBCD",
+        "alpha": "参数，具体含义可以参考report中的，这里不是很好描述",
+        "intervalNumbers": "拟合心形闭曲线所用的区间数（其实就是节点数）"
+    }
+}
