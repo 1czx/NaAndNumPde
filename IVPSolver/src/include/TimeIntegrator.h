@@ -5,7 +5,6 @@
 using RHS = function<VectorXd(VectorXd,double)>;
 
 // static double maxK = 0.5;
-
 static double Ea = 1e-5;
 static double Er = 1e-7;
 
@@ -35,6 +34,8 @@ class Result{
         fout.close();
     }
 
+    int step;
+    double time;
     vector<VectorXd> U;
 };
 
@@ -71,6 +72,8 @@ class TimeIntegrator{
                 result.U.push_back( oneStep( f, k, s ) );}
         }else for( ; (currentTime < T) ; currentStep++ ) result.U.push_back( oneStep( f, k, s ) );
         // cout << currentStep << " " << currentTime <<endl;
+        result.step = currentStep;
+        result.time = currentTime;
     }
 
     protected:
@@ -326,7 +329,6 @@ class EmbeddedRK:public TimeIntegrator{
     }
 
     vector<vector<double>> coef;
-    int p;
 };
 
 

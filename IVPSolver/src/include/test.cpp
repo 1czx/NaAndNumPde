@@ -25,31 +25,46 @@ int main(){
     TimeIntegrator * solver;
     // vector<string> method{"ABMs","AMMs","BDFs","classicalRK","ESDIRK","GaussLegendreRKMs","Fehlberg45","DormandPrince54"};
     // vector<string> method{"GaussLegendreRKMs"};
-    vector<string> method{"AMMs","BDFs","ABMs"};
-    for(auto & str:method){
-        solver = Fac.createTimeIntegrator(str);
-        // GaussLegendreRKMs solver;
-        // classicalRK solver;
-        // BDFs solver;
-        // ABMs solver;
-        // AMMs solver;
-        // Fehlberg45 solver;
-        // DormandPrince54 solver;
-        int k = 3000;
-        Result result;
-        // for( int i = 0; i < 4; i++ ){
-        // solver.setSteps(k);
-        // solver.solve(ThreeBody,u0,T1,5);
-        // result = solver.getResult();
-        // cout << (u0-result.U.back()).lInfNorm() << endl;
-        // k *= 2;
-        // }
-        // result.output("test.txt");
-        solver->setSteps(k);
-        solver->solve(ThreeBody,u0,T1,2);
-        result = solver->getResult();
-        cout << (u0-result.U.back()).lInfNorm() << endl;
-        // cout << max(abs(u0(0)-result.U.back()(0)),abs(u0(1)-result.U.back()(1)));
-        result.output("test.txt");
-    }
+    // vector<string> method{"AMMs","BDFs","ABMs"};
+    // for(auto & str:method){
+    //     solver = Fac.createTimeIntegrator(str);
+    //     // GaussLegendreRKMs solver;
+    //     // classicalRK solver;
+    //     // BDFs solver;
+    //     // ABMs solver;
+    //     // AMMs solver;
+    //     // Fehlberg45 solver;
+    //     // DormandPrince54 solver;
+    //     int k = 3000;
+    //     Result result;
+    //     // for( int i = 0; i < 4; i++ ){
+    //     // solver.setSteps(k);
+    //     // solver.solve(ThreeBody,u0,T1,5);
+    //     // result = solver.getResult();
+    //     // cout << (u0-result.U.back()).lInfNorm() << endl;
+    //     // k *= 2;
+    //     // }
+    //     // result.output("test.txt");
+    //     solver->setSteps(k);
+    //     solver->solve(ThreeBody,u0,T1,2);
+    //     result = solver->getResult();
+    //     cout << (u0-result.U.back()).lInfNorm() << endl;
+    //     // cout << max(abs(u0(0)-result.U.back()(0)),abs(u0(1)-result.U.back()(1)));
+    //     result.output("test.txt");
+    // }
+    // Fehlberg45 solver;
+    solver = Fac.createTimeIntegrator("DormandPrince54");
+    // solver = Fac.createTimeIntegrator("Fehlberg45");
+    int k = 100;
+    // cin >> Ea >> Er;
+    Ea = 1e-15;
+    Er = 1e-15;
+    Result result;
+    solver->setSteps(k);
+    solver->solve(ThreeBody,u0,T1,2);
+    result = solver->getResult();
+    cout << result.step << " " << result.time << endl;
+    cout << (u0-result.U.back()).lInfNorm() << endl;
+    // cout << max(abs(u0(0)-result.U.back()(0)),abs(u0(1)-result.U.back()(1)));
+    result.output("test.txt");
 }

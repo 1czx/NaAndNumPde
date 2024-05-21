@@ -139,7 +139,7 @@ class MatrixXd{
 };
 
 
-VectorXd operator*( const double & a, VectorXd b ){
+inline VectorXd operator*( const double & a, VectorXd b ){
     int n = b.size();
     for( int i = 0; i < n; i++ ) b(i) *= a;
     return b;
