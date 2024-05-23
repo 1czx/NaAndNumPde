@@ -1,12 +1,12 @@
 #pragma once
 
-#include<lapacke.h>
-#include<cmath>
-#include<vector>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<algorithm>
+#include <lapacke.h>
+#include <cmath>
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
 
 using std::vector;
 using std::string;

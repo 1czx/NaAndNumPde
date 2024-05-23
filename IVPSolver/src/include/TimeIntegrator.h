@@ -1,12 +1,11 @@
 #pragma once
-#include"Matrix.h"
-#include<functional>
+#include "Matrix.h"
+#include <functional>
 
 using RHS = function<VectorXd(VectorXd,double)>;
 
-// static double maxK = 0.5;
-static double Ea = 1e-5;
-static double Er = 1e-7;
+inline double Ea = 1e-5;
+inline double Er = 1e-7;
 
 enum MethodType{LLM,OneStep};
 enum StepType{fixed,adaptive};
@@ -47,6 +46,8 @@ class TimeIntegrator{
     TimeIntegrator( const MethodType & mt ):steps{0},currentStep{0},currentTime{0},MT{mt},ST{fixed}{}
     TimeIntegrator( const StepType & st ):steps{0},currentStep{0},currentTime{0},MT{OneStep},ST{st}{}
     void setSteps( const int & s ){ steps = s; } 
+    MethodType getMethodType() { return MT; }
+    StepType getStepType() { return ST; }
 
     Result getResult(){ return result; }
     //s is step for LLM, or stage for one-step method, while s = 0 representing that step or stage for this method is not optional

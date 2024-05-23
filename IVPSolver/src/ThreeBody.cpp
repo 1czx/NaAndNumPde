@@ -1,4 +1,4 @@
-#include"ThreeBody.h"
+#include "ThreeBody.h"
 VectorXd ThreeBody( VectorXd u, double t ){
     VectorXd v = u;
     double mu = 0.012277471;

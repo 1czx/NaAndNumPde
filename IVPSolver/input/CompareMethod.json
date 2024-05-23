@@ -1,0 +1,39 @@
+{
+    "CompareStep":[
+        {
+            "MethodName": "ABMs",
+            "step": 24000,
+            "s": 1
+        },
+        {
+            "MethodName": "classicalRK",
+            "step": 6000,
+            "s": 0
+        },
+        {
+            "MethodName": "DormandPrince54",
+            "step": 100,
+            "Ea": 1e-5,
+            "Er": 1e-5
+        }
+    ],
+    "CompareTime":[
+        {
+            "MethodName": "GaussLegendreRKMs",
+            "step": 5000, 
+            "s": 5
+        },
+        {
+            "MethodName": "Fehlberg45",
+            "step": 100,
+            "Ea": 1e-14,
+            "Er": 2e-15
+        },
+        {
+            "MethodName": "DormandPrince54",
+            "step": 100,
+            "Ea": 2e-14,
+            "Er": 2e-14
+        }
+    ]
+}

@@ -3,18 +3,18 @@
 #include "ThreeBody.h"
 #include "json/json.h"
 #include "catch.hpp"
+#include <iomanip>
 
 TEST_CASE("Fixed Step Method", "[TimeIntegrator]")
 {
-    cout << "Test for Fixed Step Methods" << endl;
-
+    cout << "Test for Fixed Step Methods";
     string inputDir = "../input/";
     string outPutDir = "../result/";
     TimeIntegratorFactory & Fac = TimeIntegratorFactory::getInstance();
     TimeIntegrator * solver;
     Json::Reader reader;
 	Json::Value root;
-    ifstream in(inputDir+"Test.json", std::ios::binary);
+    ifstream in(inputDir+"TestMethod.json", std::ios::binary);
     REQUIRE( in.is_open() == 1 );
     REQUIRE( reader.parse(in,root) == 1 );
     Json::Value & Methods = root["Fixed"];
@@ -75,7 +75,7 @@ TEST_CASE("Fixed Step Method", "[TimeIntegrator]")
     
     SECTION( "(10.191)" ){   
         VectorXd u0(vector<double>{0.879779227778,0,0,0,-0.379677780949,0});
-        double T1 = 19.140540691377;
+        double T2 = 19.140540691377;
         for( int i = 0 ; i < n; i++ ){
             Json::Value & method = Methods[i];
             string ID = method["MethodName"].asString();
@@ -94,7 +94,7 @@ TEST_CASE("Fixed Step Method", "[TimeIntegrator]")
                             Result result;
                             while( step < 20000 ){
                                 solver->setSteps(step);
-                                solver->solve(ThreeBody,u0,T1,s);
+                                solver->solve(ThreeBody,u0,T2,s);
                                 result = solver->getResult();
                                 if( (u0-result.U.back()).lInfNorm() < 0.01 ) break;
                                 step *= 2;
@@ -105,18 +105,18 @@ TEST_CASE("Fixed Step Method", "[TimeIntegrator]")
                             VectorXd Ubar = result.U.back();
                             if( step < 500 ) solver->setSteps(500);
                             auto start = std::chrono::high_resolution_clock::now();
-                            solver->solve(ThreeBody,u0,T1,s);
+                            solver->solve(ThreeBody,u0,T2,s);
                             auto end = std::chrono::high_resolution_clock::now();
                             result = solver->getResult();
                             std::chrono::duration<double, std::milli> tm = end - start;
-                            cout << "Num of Step: "<< max(step,500) <<  ", max step length: " << T1/(max(step,500)) << ", CPU Time: " << tm.count() << "ms" << endl;
-                            result.output(filename+"_Step="+std::to_string(step)+"_P");
+                            cout << "Num of Step: "<< max(step,500) <<  ", max step length: " << T2/(max(step,500)) << ", CPU Time: " << tm.count() << "ms" << endl;
+                            result.output(filename+"_Step="+std::to_string(max(step,500))+"_P");
                             ofstream fout(filename+"_A");
                             for( int k = 0; k < 4; k++ ){
                                 step*=2;
                                 solver->setSteps(step);
                                 start = std::chrono::high_resolution_clock::now();
-                                solver->solve(ThreeBody,u0,T1,s);
+                                solver->solve(ThreeBody,u0,T2,s);
                                 end = std::chrono::high_resolution_clock::now();
                                 tm = end - start;
                                 result = solver->getResult();
@@ -131,6 +131,7 @@ TEST_CASE("Fixed Step Method", "[TimeIntegrator]")
             }
         }
     }
+    cout << '\n';
 }
 
 

@@ -1,0 +1,61 @@
+{
+    "Fixed": [
+        {
+            "MethodName": "ABMs",
+            "Accuracy": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "MethodName": "AMMs",
+            "Accuracy": [
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "MethodName": "BDFs",
+            "Accuracy": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "MethodName": "classicalRK",
+            "Accuracy": [4]
+        },
+        {
+            "MethodName": "ESDIRK",
+            "Accuracy": [4]
+
+        },
+        {
+            "MethodName": "GaussLegendreRKMs",
+            "Accuracy": [
+                2,
+                4,
+                6,
+                8,
+                10
+            ]
+        }
+    ],
+    
+    "Adaptive":[
+        {
+            "MethodName": "Fehlberg45",
+            "stepOrStage": []
+        },
+        {
+            "MethodName": "DormandPrince54",
+            "stepOrStage": []
+        }
+    ]
+}
