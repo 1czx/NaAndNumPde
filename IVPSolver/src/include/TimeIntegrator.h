@@ -70,7 +70,8 @@ class TimeIntegrator{
         }
         if( ST == fixed ){ 
             for( ; (currentStep < steps) ; currentStep++ ){ 
-                result.U.push_back( oneStep( f, k, s ) );}
+                result.U.push_back( oneStep( f, k, s ) );
+            }
         }else for( ; (currentTime < T) ; currentStep++ ) result.U.push_back( oneStep( f, k, s ) );
         // cout << currentStep << " " << currentTime <<endl;
         result.step = currentStep;
@@ -97,6 +98,11 @@ class ABMs:public TimeIntegrator{
     private:
     
     VectorXd oneStep( RHS & f, double & k, int s ){
+        if( s < 1 || s > 4 ){
+            result.clear();
+            currentStep = steps;
+            std::cerr<< "Error: " << s << " step ABMs is not implemented!" << endl;
+        }
         VectorXd u(result.U.back());
         for( int i = 0; i < s; i++ ) u = u + k*ABMcoef[s-1][i]*f(result.U[currentStep-i],(currentStep-i)*k);
         return u;
@@ -111,6 +117,11 @@ class AMMs:public TimeIntegrator{
 
     private:
     VectorXd oneStep( RHS & f, double & k, int s ){
+        if( s < 1 || s > 4 ){
+            result.clear();
+            currentStep = steps;
+            std::cerr<< "Error: " << s << " step AMMs is not implemented!" << endl;
+        }
         VectorXd u(result.U.back());
         for( int i = 0; i < s; i++ ) {u = u + k*ABMcoef[s-1][i]*f(result.U[currentStep-i],(currentStep-i)*k);}
         u = result.U.back() + k*AMMcoef[s-1][0]*f(u,(currentStep+1)*k);
@@ -126,6 +137,11 @@ class BDFs:public TimeIntegrator{
     
     private:
     VectorXd oneStep( RHS & f, double & k, int s ){
+        if( s < 1 || s > 4 ){
+            result.clear();
+            currentStep = steps;
+            std::cerr<< "Error: " << s << " step BDFs is not implemented!" << endl;
+        }
         VectorXd u(result.U.back());
         VectorXd temp(u);
         double esp = 2.2e-16;
@@ -259,6 +275,11 @@ class GaussLegendreRKMs:public TimeIntegrator{
 
     private:
     VectorXd oneStep( RHS & f, double & k, int s ){
+        if( s < 1 || s > 5 ){
+            result.clear();
+            currentStep = steps;
+            std::cerr<< "Error: " << s << " stage Gauss-Legendre RKMs is not implemented!" << endl;
+        }
         vector<vector<double>> table = coef[s-1];
         VectorXd u(result.U.back());
         vector<VectorXd> y(s,f(u,currentStep*k));
